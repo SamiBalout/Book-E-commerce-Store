@@ -1,0 +1,71 @@
+<div>
+    <form [formGroup] = "bookForm" (ngSubmit)="updateBook(fileInput)">
+      <mat-toolbar color="secondary" fxLayoutAlign="center center" >Update Book Dialog</mat-toolbar>
+
+            <mat-form-field style="background-color: gainsboro">
+              <input matInput type="number" placeholder="Id" formControlName="id" readonly>
+            </mat-form-field>
+          
+            <mat-form-field>
+              <input matInput  type="text" placeholder="Name" formControlName="name">
+            </mat-form-field>
+
+            <mat-form-field>
+              <input matInput  type="number" placeholder="Price" formControlName="price">
+            </mat-form-field>
+
+            <mat-form-field>
+              <input matInput  type="text" placeholder="Type" formControlName="type" >
+            </mat-form-field>
+
+            <mat-form-field>
+              <input matInput  type="text" placeholder="Genre" formControlName="genre">
+            </mat-form-field>
+
+            <mat-form-field>
+              <input matInput  type="text" placeholder="Category" formControlName="category" >
+            </mat-form-field>
+
+            <mat-form-field>
+              <input matInput  type="text" placeholder="Author" formControlName="author" >
+            </mat-form-field>
+
+            <mat-form-field>
+              <input matInput  type="text" placeholder="Description" formControlName="description">
+            </mat-form-field>
+
+            <mat-form-field>
+              <input matInput  type="text" placeholder="Format" formControlName="format"  >
+            </mat-form-field>
+
+            <mat-form-field>
+              <input matInput  type="number" placeholder="Rating" formControlName="rating"  >
+            </mat-form-field>
+
+            <mat-form-field>
+              <input matInput  type="number" placeholder="Quantity" formControlName="quantity" >
+            </mat-form-field>
+
+            <mat-label>OnSale</mat-label>
+                <select formControlName="onSale">
+                  <option *ngFor="let choice of choices" [value]="choice">
+                    {{choice}}
+                  </option>
+                </select>
+
+            
+
+            <!-- Upload Image File Here-->
+            <!-- <mat-form-field>
+              <input matInput  type="text" placeholder="" formControlName="">
+            </mat-form-field> -->
+
+            <input  id="files" type="file" placeholder="Image" formControlName="file" #fileInput> 
+
+            <div>
+              <button class="button" mat-raised-button color="primary" type="submit">Update Book</button>
+            </div>
+
+            <!-- <span>{{message}}</span> -->
+    </form> 
+  </div>

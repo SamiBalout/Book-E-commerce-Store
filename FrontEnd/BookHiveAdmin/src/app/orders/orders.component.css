@@ -1,0 +1,35 @@
+.demo-table {
+    width: 100%;
+  }
+
+  btn {
+    size: 20px;
+  }
+
+  .mat-button {
+    size: x-large;
+    color:rgba(0, 0, 0, 0.788);
+    background-color: #CFA813;
+    
+
+  }
+
+  .mat-column-id {
+    border-right: 3px solid;
+    border-right-color: black;
+    
+  }
+
+  .mat-column-id, .mat-column-customerId, .mat-column-orderDetails, .mat-column-address, .mat-column-status, .mat-column-dateTime, .mat-column-time {
+    text-align: center;
+  }
+
+  input:hover {
+    background-color:rgba(255, 255, 0, 0.521);
+  
+  }
+
+  button:hover {
+    color : rgb(255, 196, 0);
+    background-color: rgba(255, 255, 0, 0.521); 
+  }

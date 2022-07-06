@@ -1,0 +1,105 @@
+
+  <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled">Disabled</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav> -->
+  
+  
+  <nav class="navbar navbar-expand-lg" style="background-color: #133ACF">
+    <div class="container-fluid">
+      <img src="https://firebasestorage.googleapis.com/v0/b/book-hive-cgi.appspot.com/o/Book_Hive_Logo.jpg?alt=media&token=ee9f6f02-ead2-4d06-a5cc-6149afbe190d" width="2%" height="2%">
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" aria-controls="navbarNav"
+      aria-controls="navbarNav">
+      <!-- <span class="navbar-toggler-icon">menu</span> -->
+        <mat-icon style="color : white;">menu</mat-icon>
+      </button>
+      
+
+
+      <!-- <mat-drawer-container class="navbar-toggler" autosize>
+        <mat-drawer #drawer class="example-sidenav"> 
+
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navbarNav">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/admin/bookdashboard">Book Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/admin/orders">Customer Orders</a>
+          </li>
+        </ul>
+        </mat-drawer>
+      
+        <div class="example-sidenav-content">
+          <button type="button" mat-button (click)="drawer.toggle()">
+            Menu
+          </button>
+        </div>
+      
+      </mat-drawer-container>
+       -->
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <a class="navbar-brand" routerLink="/admin/bookdashboard">Book Hive Employee Portal</a>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navbarNav">
+          <!-- <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/admin/bookdashboard">Home</a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/admin/bookdashboard">Book Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/admin/orders">Customer Orders</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" (click)="onLogout()">Logout</a>
+          </li> -->
+        </ul>
+
+        <div class="d-flex">
+        <button mat-button [matMenuTriggerFor]="menu">
+          <mat-icon>
+            <i class='fas fa-user-check'></i>
+          </mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <!-- <button mat-menu-item>Profile</button> -->
+          <button mat-menu-item (click)="onLogout()">Logout</button>
+        </mat-menu>
+      </div>
+      </div>
+    </div>
+  </nav>
+
+  <script>
+    function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    }
+  </script>
+  
+
+

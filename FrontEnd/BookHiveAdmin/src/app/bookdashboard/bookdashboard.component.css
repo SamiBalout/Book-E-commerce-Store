@@ -1,0 +1,62 @@
+.demo-table {
+    width: 100%;
+  
+  }
+
+  button:hover {
+    color : rgb(255, 196, 0);
+    background-color: rgba(255, 255, 0, 0.521); 
+  }
+
+  .button {
+    size: x-large;
+    color:rgba(0, 0, 0, 0.788);
+    background-color: #CFA813;
+
+  }
+
+  .mat-icon {
+    font-size: 20px;
+  }
+
+.mat-toolbar{
+  border-top: black;
+  border-bottom: black;
+  
+}
+
+.mat-column-id {
+    border-right: 5px solid;
+    border-right-color: black;
+}
+
+.mat-column-id,.mat-column-name,.mat-column-price, .mat-column-category,.mat-column-author,.mat-column-description, .mat-column-quantity,
+.mat-column-imageUrl, .mat-column-active, .mat-column-update, .mat-column-remove  {
+  text-align: center;
+  border-right: 20px solid current currentColor;
+}
+
+.mat-column-name, .mat-column-price, .mat-column-category,.mat-column-author,.mat-column-description, .mat-column-quantity {
+  border-right: 1px solid;
+  border-right-color: black;
+}
+
+
+btn {
+  float : right
+}
+
+.mat-column-active {
+  border-left: 3px solid;
+  border-left-color: black;
+}
+
+/* .mat-column-update {
+  border-left: 3px solid;
+  border-left-color: black;
+} */
+
+input:hover {
+  background-color:rgba(255, 255, 0, 0.521);
+
+}

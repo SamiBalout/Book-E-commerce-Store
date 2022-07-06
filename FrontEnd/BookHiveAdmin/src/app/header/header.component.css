@@ -1,0 +1,55 @@
+.spacer {
+    margin : auto ;
+  }
+
+  .button{
+    float : right
+  }
+
+  .nav-item:hover{
+    color : rgb(255, 196, 0);
+    
+    
+  }
+
+  .btn:hover{
+    color : rgb(255, 196, 0);
+    background-color: rgb(255, 255, 0); 
+
+  }
+
+  .form-control:hover {
+    color : rgb(255, 196, 0);
+    background-color: rgb(255, 255, 0); 
+  }
+
+  a {
+    color: white;
+  }
+
+  a:hover,i:hover {
+    color: rgb(255, 196, 0);
+  }
+
+  i {
+    color: white;
+  }
+
+  .navbar-toggler {
+    width: 100px;
+    height: 100px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+  }
+  
+  .example-sidenav-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+
+
+  
