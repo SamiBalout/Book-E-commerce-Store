@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="order-container">
+    <div class="order-container-header">
+      <h2>Your Orders</h2>
+    </div>
+    <mat-expansion-panel hideToggle *ngFor="let order of obs | async" class="order-item">
+      <mat-expansion-panel-header class="header" [collapsedHeight]="'auto'" [expandedHeight]="'auto'">
+        <mat-panel-title>
+          Order Placed On: {{order.dateTime.split("T")[0]}}
+        </mat-panel-title>
+        <mat-panel-title>
+          Total: ${{order.total}}
+        </mat-panel-title>
+        <mat-panel-description class="order-item-id">
+          Order #: {{order.id}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div class="order-details">
+        <p>Shipping Address: {{order.address}}</p>
+        <p>Status: <span [ngClass]="{
+          'primary': order.status==='Delivered',
+          'secondary': order.status==='Pending',
+          'error': order.status==='Holding'
+        }">{{order.status}}</span>
+        </p>
+      </div>
+      <mat-card *ngFor="let orderDetail of order.orderDetails" class="card-container">
+        <img mat-card-md-image src="{{orderDetail.book.imageUrl}}">
+        <mat-card-content class="content">
+          <h2 class="primary">{{orderDetail.book.name}}</h2>
+          <p>{{orderDetail.book.description ? orderDetail.book.description : "No description available"}}</p>
+          <p>Quantity Purchased: {{orderDetail.quantity}}</p>
+        </mat-card-content>
+      </mat-card>
+    </mat-expansion-panel>
+    <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page">
+    </mat-paginator>
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+

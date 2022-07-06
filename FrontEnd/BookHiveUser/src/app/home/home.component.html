@@ -1,0 +1,82 @@
+<nav class="navbar navbar-expand-lg" style="background-color: white">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navbarNav">
+          <!-- <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/admin/bookdashboard">Home</a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link"  routerLink="/book">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/horror">Horror</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/learning">Learning</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/onsale">On Sale</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" (click)="onLogout()">Logout</a>
+          </li> -->
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+<div style="align-content: center; display: flex; justify-content: space-between; margin: 5%;">
+    
+    <mat-card class="example-card" style="width: 55%;">
+      <mat-card-content style="width: 50%; margin-top: 10%;"> 
+        <h2>
+            Spend your Easter weekend reading! Select from a wide range of books from Children to Horror. 
+        </h2>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button  routerLink="/book">Shop All</button>
+      </mat-card-actions>
+      <mat-accordion>
+        <mat-expansion-panel hideToggle style="width: 50%;">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              What's a bee's favourite novel? 
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>The Great Gats-Bee</p>
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-card>
+    <mat-card class="example-card">
+        <img mat-card-image src="https://firebasestorage.googleapis.com/v0/b/book-hive-cgi.appspot.com/o/EasterAd.png?alt=media&token=0c844c63-c472-4697-a531-6b641f6e2448" alt="Photo of a Shiba Inu">
+      </mat-card>
+</div>
+<h1 style="background-color: #133ACF; color: #CFA813; text-align: center; margin: 5%;" >Featured Books On Sale</h1>
+<div style="align-content: center; display: flex; justify-content: space-between; margin: 5%;">
+    <mat-card class="example-card" style="width: 15%;" *ngFor="let book of bookSaleList">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+      </mat-card-header>
+      <img mat-card-image src={{book.imageUrl}} alt="Book Cover" style="height: 40%;">
+      <mat-card-content style="width: 50%; margin-top: 10%;"> 
+        <p>
+            {{book.name}}
+        <p>
+        <p>
+            ${{book.price}}
+        <p>
+      </mat-card-content>
+      <mat-card-actions >
+        <button mat-button (click)="addToCart(book.id)">Add To Cart</button>
+      </mat-card-actions>
+    </mat-card>
+    
+</div>
+
+
+
+
+

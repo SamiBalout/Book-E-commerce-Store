@@ -1,0 +1,76 @@
+<div class="container">
+    <h1 class="header">Shopping cart</h1>
+</div>
+
+<mat-divider></mat-divider>
+
+<div class="container" *ngIf="cartList.length > 0">
+    <table class="table table-light">
+        
+        <mat-card class="cartBody" *ngFor="let cartItem of cartList">
+            <img class="image" mat-card-image src="{{cartItem.book?.imageUrl}}" alt="Image of the book">
+            <h1>Name:{{cartItem.book?.name}}</h1>
+            <p>Author:{{cartItem.book?.author}}</p>
+            <p>Description:{{cartItem.book?.description}}</p>
+            <p>Price:{{cartItem.book?.price}}</p>
+            
+            <mat-form-field appearance="fill">
+                <mat-label>Quantity</mat-label>
+                <mat-select [(ngModel)]="cartItem.quantity" name="quantity" [value]="cartItem.quantity">
+                  <mat-option *ngFor="let quantity of quantityList" [value]="quantity">
+                    {{quantity}}
+                    <!-- <span *ngIf="quantity==0">(delete)</span> -->
+                  </mat-option>
+                </mat-select>
+            </mat-form-field>
+            
+            <mat-card-actions>
+                <button class="btn" aria-hidden="true" (click)="delete(cartItem.book?.id)" style="margin: 1%;">
+                    <i class="fas fa-trash">
+                        Delete
+                    </i>
+                </button>
+
+                <button class="btn" aria-hidden="true" (click)="update(cartItem.book?.id, cartItem.quantity)">
+                    <i class="fas fa-edit">
+                        Update
+                    </i>
+                </button>
+            </mat-card-actions>              
+        </mat-card>
+        
+    </table>
+</div>
+
+<div class="container" *ngIf="cartList.length ==0">
+    <h3>Cart is empty</h3>
+</div>
+
+<mat-divider></mat-divider>
+
+<div class="checkout">
+    <p>Subtotal:${{subtotal}}</p>
+    <button mat-button class="btn" (click)="checkout()">
+        <i class="fas fa-credit-card" aria-hidden="true" >Checkout</i><br/>
+    </button> 
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

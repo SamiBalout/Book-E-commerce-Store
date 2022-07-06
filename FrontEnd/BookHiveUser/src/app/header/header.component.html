@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg" style="background-color: #133ACF">
+  
+  <div class="container-fluid">
+    <img src="https://firebasestorage.googleapis.com/v0/b/book-hive-cgi.appspot.com/o/Book_Hive_Logo.jpg?alt=media&token=ee9f6f02-ead2-4d06-a5cc-6149afbe190d" width="2%" height="2%">
+    <h1 style="color: aliceblue;">Book Hive</h1>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="/">
+        <mat-icon>home</mat-icon>
+        <a>Home </a>
+      </button>
+      <button mat-menu-item routerLink="/book">
+        <mat-icon>book</mat-icon>
+        <a>Book </a>
+      </button>
+      <button mat-menu-item routerLink="/cart">
+        <mat-icon>add_shopping_cart</mat-icon>
+        <a>Cart </a>
+      </button>
+      <button mat-menu-item routerLink="/order">
+        <mat-icon>reorder</mat-icon>
+        <a>Order </a>
+      </button>
+    </mat-menu>
+  </div>
+  <div class="example-sidenav-content">
+    <button mat-icon-button [matMenuTriggerFor]="profile">
+      <mat-icon>person</mat-icon>
+    </button>
+    <mat-menu #profile="matMenu">
+      <div *ngIf="!isUserAuthenticated">
+        <button mat-menu-item routerLink="/login">
+          <a>Login</a>
+        </button>
+        <button mat-menu-item  routerLink="/register">
+          <a>Register </a>
+        </button>
+      </div> 
+      <button mat-menu-item *ngIf="isUserAuthenticated" (click)="logout()">
+        <a>Logout</a>
+      </button>
+    </mat-menu>
+  </div>
+  
+</nav>

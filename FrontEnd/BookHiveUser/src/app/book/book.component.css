@@ -1,0 +1,88 @@
+.searchBar{
+    text-align: center;
+}
+.mat-card-image {
+    height: 100px;
+    width: 200px
+}
+
+.example-card {
+    max-width: 400px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+
+  .mcard {
+      max-width: 500px;
+      /* background-color: lightcyan; */
+      display: flex;
+      flex-direction: row;
+      margin-top: 80px;
+      margin-left: 80px;
+
+  }
+
+  .heading {
+    text-align: center;
+    align-items: center;
+
+
+  }
+
+  .mcard:hover {
+      background-color: lightyellow
+  }
+
+
+  .mat-list {
+      display:block;
+      text-align: center;
+      justify-content: center
+      
+  }
+
+  mat-card-title {
+    align-items: center;
+    text-align: center;
+  }
+
+  .mat-toolbar {
+    justify-content: center;
+  }
+
+
+
+  .btn {
+    size: x-large;
+    color:rgba(0, 0, 0, 0.788);
+    background-color: #CFA813;
+
+  }
+
+  .btn:hover{
+    color : rgb(255, 196, 0);
+    background-color: rgb(255, 255, 0); 
+  }
+
+  td {
+    align-items: center;
+  }
+
+
+  input {
+    width: 600px;
+    min-width: auto;
+  }
+    
+
+
+
+
+
+
+
+
+  

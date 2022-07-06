@@ -1,0 +1,188 @@
+<div style="justify-content: center; align-content: center; display: flex; margin: 5%;">
+    
+    <mat-card class="example-card">
+      <mat-card-content style="width: 50%; margin-top: 10%;"> 
+        <h2>
+            Eagar to learn, we have books for all age groups. Let us take you on an adventure through books from history to cooking.
+        </h2>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button  routerLink="/book">Shop All</button>
+      </mat-card-actions>
+      <mat-accordion>
+        <mat-expansion-panel hideToggle style="">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+                What kind of bees are the smartest? 
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>Spelling bees</p>
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-card>
+    <mat-card class="example-card">
+        <img mat-card-image src="https://firebasestorage.googleapis.com/v0/b/book-hive-cgi.appspot.com/o/learningbee.png?alt=media&token=bb130e0b-4a0d-4027-8c7d-aa2a87db4629" alt="Photo of a Shiba Inu" style="height: 100%; width: 100%;">
+      </mat-card>
+</div>
+
+<mat-toolbar color="secondary" >Browse All Learning Books</mat-toolbar>
+<mat-toolbar>
+    <form class="d-flex">
+      <input class="form-control me-2" type="search" (keyup)="applyFilter($event)" placeholder="Search Through 1000's of Books..." #input>
+      <button class="btn btn-warning" type="submit">Search</button>
+    </form>
+  </mat-toolbar>
+  
+    
+    <div class="matcard" style="display:flex; flex-wrap: wrap;" >
+        <mat-card class="mcard" *ngFor="let book of pagedList" fxLayoutGap="0px" fxLayoutAlign="center" >
+            <mat-card-header>
+                <mat-card-title class="titleclass"> 
+                    
+                    <h2>{{book.name}}</h2>
+                    
+                    <img mat-card-image src={{book.imageUrl}} >
+                    
+                    <mat-divider></mat-divider>
+                    <mat-list role="list" class="inline-list">
+                        <mat-list-item role="listitem">Price: ${{book.price}}</mat-list-item>
+                        <!-- <mat-list-item role="listitem">Type: {{book.type}}</mat-list-item> -->
+                        <!-- <mat-list-item role="listitem">Genre: {{book.genre}}</mat-list-item> -->
+                        <mat-list-item role="listitem">Category: {{book.category}}</mat-list-item>
+                        <mat-list-item role="listitem">Rating: {{book.rating}}</mat-list-item>
+                        <mat-list-item role="listitem">Quantity: {{book.quantity}}</mat-list-item>
+                        <button mat-button class="btn">
+                            <i class="fas fa-cart-plus fa-lg" aria-hidden="true" (click)="addToCart(book.id)">Add to Cart</i><br/>
+                        </button> 
+                    </mat-list>
+                </mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content>
+                <mat-list role="list">
+                    <!-- <mat-list-item role="listitem">Category: {{book.category}}</mat-list-item> -->
+                    <!-- <mat-list-item role="listitem">Author: {{book.author}}</mat-list-item> -->
+                    <!-- <mat-list-item role="listitem">Description: {{book.description}}</mat-list-item> -->
+                </mat-list>
+
+                <mat-list role="list">
+                    <!-- <mat-list-item role="listitem">Format: {{book.format}}</mat-list-item> -->
+                    <!-- <mat-list-item role="listitem">Rating: {{book.rating}}</mat-list-item> -->
+                    <!-- <mat-list-item role="listitem">Quantity: {{book.quantity}}</mat-list-item> -->
+                </mat-list>
+
+                
+                <!-- <th>
+                    <tr>Category:{{book.category}}</tr>
+                    <mat-divider></mat-divider> -->
+                    <!-- <tr>Author:{{book.author}}</tr> -->
+                    <!-- <mat-divider></mat-divider> -->
+                <!-- </th> -->
+
+                <!-- <th> -->
+                    <!-- <tr><mat-card-content>Description:{{book.description}}</mat-card-content></tr>
+                    <mat-divider></mat-divider>
+                    <tr>Format:{{book.format}}</tr>
+                    <mat-divider></mat-divider>
+                    <tr>Rating:{{book.rating}}</tr>
+                    <mat-divider></mat-divider>
+                    <tr>Quantity:{{book.quantity}}</tr>
+                    <mat-divider></mat-divider> -->
+                <!-- </th> -->
+
+            </mat-card-content>
+
+            
+        <!-- <mat-card-content>
+                <button mat-button class="btn">
+                    <i class='fas fa-cart-plus fa-lg'>Add to Cart</i><br/>
+                </button>
+        </mat-card-content>  -->
+    </mat-card>
+</div>
+
+<!-- Implement Paginator -->
+<mat-paginator [length]="100" 
+[pageSize]="10" 
+[pageSizeOptions]="[5, 10, 25, 100]"
+aria-label="Select page"
+(page)="onPageChange($event)"
+></mat-paginator>
+
+<div class="container" *ngIf="bookList.length ==0">
+    <h3>Book List is empty</h3>
+</div>
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container">Book list</div>
+
+<div mat-table class="container" *ngIf="bookList.length > 0">
+    <table class="table table-light">
+        <tbody>
+            <mat-card *ngFor="let book of bookList">
+                <div *ngIf="book.active">
+            <mat-card-header>
+                    <img mat-card-image src="{{book.imageUrl}}" alt="Image of the book">
+                    <td ng-model="bookId">Id:{{book.id}}</td>
+                    <mat-divider></mat-divider>
+                    <mat-card-title>{{book.name}}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                    <mat-divider></mat-divider>
+                    <td>Price:{{book.price}}</td>
+                    <mat-divider></mat-divider>
+                    <td>Type:{{book.type}}</td>
+                    <mat-divider></mat-divider>
+                    <td>Genre:{{book.genre}}</td>
+                    <mat-divider></mat-divider>
+                    <td>Category:{{book.category}}</td>
+                    <mat-divider></mat-divider>
+                    <td>Author:{{book.author}}</td>
+                    <mat-divider></mat-divider>
+                    <mat-card-content>Description:{{book.description}}</mat-card-content>
+                    <mat-divider></mat-divider>
+                    <td>Format:{{book.format}}</td>
+                    <mat-divider></mat-divider>
+                    <td>Rating:{{book.rating}}</td>
+                    <mat-divider></mat-divider>
+                    <td>Quantity:{{book.quantity}}</td>
+                    <mat-divider></mat-divider>
+            </mat-card-content>
+                    <mat-card-actions>
+                        <button class="fa fa-trash" aria-hidden="true" (click)="addToCart(book.id)">Add to cart</button>
+                    </mat-card-actions>
+                </div>
+            </mat-card>
+
+        </tbody>
+    </table>
+</div>
+<div class="container" *ngIf="bookList.length ==0">
+    <h3>Book List is empty</h3>
+</div> -->
+
+
